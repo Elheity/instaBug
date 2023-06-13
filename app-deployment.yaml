@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: app
+          image: ahmedelheity/instabug:1.0  # Replace with your actual image name and tag
+          ports:
+            - containerPort: 9090
+          env:
+            - name: MYSQL_HOST
+              value: "4.246.151.92"
+            - name: MYSQL_USER
+              value: "instabug"
+            - name: MYSQL_PASS
+              value: "instabug"
+            - name: MYSQL_PORT
+              value: "3306"
+          envFrom:
+            - configMapRef:
+                name: app-config
+          imagePullPolicy: Always

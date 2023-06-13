@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-db
+  template:
+    metadata:
+      labels:
+        app: my-db
+    spec:
+      containers:
+        - name: db
+          image: mysql:8.0
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: example
+            - name: MYSQL_DATABASE
+              value: internship
+            - name: MYSQL_USER
+              value: instabug
+            - name: MYSQL_PASSWORD
+              value: instabug
+          imagePullPolicy: IfNotPresent
