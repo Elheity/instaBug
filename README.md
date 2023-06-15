@@ -51,11 +51,11 @@ And exposes itself on port 9090:
 ![Screenshot from 2023-06-15 13-29-54](https://github.com/Elheity/instaBug/blob/main/assets/WhatsApp%20Image%202023-06-15%20at%2015.02.20%20(1).jpeg)
 
 ## Minikube Cluster Setup:
-    Start the Minikube cluster using the Docker driver by running the command: 
+    # Start the Minikube cluster using the Docker driver by running the command: 
 
      minikube start --driver docker
 
-    Verify the status of the Minikube cluster using the command:
+    # Verify the status of the Minikube cluster using the command:
 
      minikube status
 
