@@ -14,11 +14,6 @@ func main() {
 type handler struct {
 }
 
-type row struct {
-	id        int64
-	createdAt time.Time
-}
-
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/healthcheck" {
 		w.WriteHeader(200)
@@ -27,7 +22,6 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	switch r.Method {
 
-    
 	case "GET":
 		rs, err := _connection.Query(`SELECT id,created_at FROM stuff`)
 		if err != nil {
@@ -38,7 +32,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		type row struct {
 			ID        int       `json:"id"`
 			CreatedAt time.Time `json:"created_at"`
-			}
+		}
 
 		var ret []row
 		for rs.Next() {
