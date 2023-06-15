@@ -30,6 +30,12 @@ And exposes itself on port 9090:
     cd instabug
     go build -o main .
     ./main
+## Fix bug in the code 
+ 
+![Screenshot from 2023-06-10 23-20-48](https://github.com/Elheity/instaBug/blob/main/assets/WhatsApp%20Image%202023-06-15%20at%2015.02.20%20(2).jpeg)
+
+![Screenshot from 2023-06-10 23-20-48](https://github.com/Elheity/instaBug/blob/main/assets/WhatsApp%20Image%202023-06-15%20at%2015.02.20.jpeg)
+
 
 ## Build Docker Image:
     sudo docker build -t internship .
@@ -50,7 +56,7 @@ And exposes itself on port 9090:
     kubectl apply -f kubernetes//db-deployment.yaml 
     kubectl apply -f kubernetes//db-service.yaml 
     kubectl apply -f kubernetes//app-config.yaml 
-    
+
 ![Screenshot from 2023-06-13 15-43-45](https://github.com/Elheity/instaBug/blob/main/assets/IMG_20230615_144045.jpg)
 
 
@@ -74,9 +80,5 @@ and it also point to helm package.
     kubectl apply -f Application.yaml
 #
 
-## Fix bug in the code 
- 
-![Screenshot from 2023-06-10 23-20-48](https://github.com/Elheity/instaBug/blob/main/assets/WhatsApp%20Image%202023-06-15%20at%2015.02.20%20(2).jpeg)
 
-![Screenshot from 2023-06-10 23-20-48](https://github.com/Elheity/instaBug/blob/main/assets/WhatsApp%20Image%202023-06-15%20at%2015.02.20.jpeg)
 
