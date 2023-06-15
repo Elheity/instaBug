@@ -50,6 +50,16 @@ And exposes itself on port 9090:
 
 ![Screenshot from 2023-06-15 13-29-54](https://github.com/Elheity/instaBug/blob/main/assets/WhatsApp%20Image%202023-06-15%20at%2015.02.20%20(1).jpeg)
 
+## Minikube Cluster Setup:
+    Start the Minikube cluster using the Docker driver by running the command: 
+
+     minikube start --driver docker
+
+    Verify the status of the Minikube cluster using the command:
+
+     minikube status
+
+    Ensure that the control plane components, including the host, kubelet, apiserver, and kubeconfig, are running and properly configured.
 ## Install API Using Kubectl:
     kubectl apply -f kubernetes//app-deployment.yaml 
     kubectl apply -f kubernetes//app-service.yaml 
@@ -62,7 +72,7 @@ And exposes itself on port 9090:
 
 
 ## Install API Using Helm:
-    helm install inastapp-api instaapp/
+    helm install mywebapp-release helminsta/ --namespace default --set fullnameOverride=mywebapp-release --set releaseNamespace=default
 ![Screenshot from 2023-06-10 23-20-48](https://github.com/Elheity/instaBug/blob/main/assets/IMG_20230615_143852.jpg)
 
 ![Screenshot from 2023-06-10 23-20-48](https://github.com/Elheity/instaBug/blob/main/assets/IMG_20230615_143916.jpg)
@@ -77,7 +87,7 @@ And exposes itself on port 9090:
  Install API By Using Helm Charts Command OR By Run Application.yaml K8s File And It Will Sync Automatically.
 and it also point to helm package.
 #
-    kubectl apply -f Application.yaml
+    kubectl apply -f helminsta/templates/application.yaml 
 #
 
 
