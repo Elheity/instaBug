@@ -14,6 +14,11 @@ func main() {
 type handler struct {
 }
 
+type row struct {
+	id        int
+	createdAt time.Time
+}
+
 func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/healthcheck" {
 		w.WriteHeader(200)
